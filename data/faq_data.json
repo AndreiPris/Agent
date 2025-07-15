@@ -1,0 +1,51 @@
+{
+  "business_info": {
+    "name": "XOFlowers",
+    "tagline": "Cele mai frumoase flori din Chișinău",
+    "working_hours": "Luni-Duminică, 09:00-21:00",
+    "location": "Chișinău, Moldova",
+    "phone": "+373 XX XXX XXX",
+    "email": "contact@xoflowers.md",
+    "website": "https://xoflowers.md"
+  },
+  "faq": [
+    {
+      "question": "Care sunt orele de lucru?",
+      "answer": "🕒 Orele noastre de lucru:\n• Luni-Duminică: 09:00 - 21:00\n• Suntem disponibili în fiecare zi pentru a vă servi!"
+    },
+    {
+      "question": "Livrați în Chișinău?",
+      "answer": "🚚 Informații despre livrare:\n• Livrare gratuită în Chișinău pentru comenzile peste 500 MDL\n• Taxa standard de livrare: 100 MDL\n• Livrare express disponibilă pentru comenzi urgente"
+    },
+    {
+      "question": "Unde vă aflați?",
+      "answer": "📍 Locația XOFlowers:\n• Adresa: Chișinău, Moldova\n• Telefon: +373 XX XXX XXX\n• Ne aflăm în centrul Chișinăului!"
+    },
+    {
+      "question": "Care este politica de returnare?",
+      "answer": "↩️ Politica de returnare:\n• Florile proaspete pot fi returnate în 24 de ore în caz de probleme de calitate\n• Rambursare completă pentru produse deteriorate\n• Contactați-ne imediat pentru orice nelămuriri"
+    },
+    {
+      "question": "Acceptați plăți cu cardul?",
+      "answer": "💳 Metode de plată:\n• Plată cu cardul (Visa, Mastercard)\n• Plată cash la livrare\n• Transfer bancar\n• Toate plățile sunt securizate"
+    },
+    {
+      "question": "Aveți flori pentru ocazii speciale?",
+      "answer": "🎉 Ocazii speciale:\n• Nunți și logodne\n• Zile de naștere\n• Aniversări\n• Sărbători naționale\n• Evenimente corporative"
+    },
+    {
+      "question": "Cum pot comanda?",
+      "answer": "📱 Cum să comandați:\n• Scrieți-ne direct în chat\n• Apelați la +373 XX XXX XXX\n• Vizitați website-ul nostru\n• Veniți la magazin"
+    },
+    {
+      "question": "Aveți abonamente pentru flori?",
+      "answer": "🌸 Abonamente pentru flori:\n• Abonament săptămânal - 800 MDL/lună\n• Abonament bi-săptămânal - 1200 MDL/lună\n• Abonament lunar - 2000 MDL/lună\n• Livrare inclusă și program flexibil"
+    }
+  ],
+  "quick_responses": {
+    "greeting": "Bună ziua! 🌸 Bun venit la XOFlowers! Cum vă pot ajuta astăzi?",
+    "farewell": "Mulțumim că ați ales XOFlowers! 🌺 O zi frumoasă!",
+    "processing": "Un moment, vă caut cele mai frumoase opțiuni... 🌸",
+    "error": "Îmi pare rău, a apărut o problemă tehnică. Vă rugăm să încercați din nou sau contactați-ne direct."
+  }
+}

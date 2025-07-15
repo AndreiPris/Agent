@@ -1,0 +1,54 @@
+{
+  "test_user": {
+    "user_id": "test_user",
+    "name": null,
+    "preferences": {},
+    "purchase_history": [],
+    "conversation_count": 14,
+    "first_interaction": "2025-07-15T13:07:24.138674",
+    "last_interaction": "2025-07-15T13:09:34.671622",
+    "favorite_products": [
+      "trandafir"
+    ],
+    "budget_range": null,
+    "special_occasions": []
+  },
+  "flow_test_user_1": {
+    "user_id": "flow_test_user_1",
+    "name": null,
+    "preferences": {},
+    "purchase_history": [],
+    "conversation_count": 1,
+    "first_interaction": "2025-07-15T13:09:54.801613",
+    "last_interaction": "2025-07-15T13:09:54.801613",
+    "favorite_products": [],
+    "budget_range": null,
+    "special_occasions": [
+      "mama"
+    ]
+  },
+  "flow_test_user_2": {
+    "user_id": "flow_test_user_2",
+    "name": null,
+    "preferences": {},
+    "purchase_history": [],
+    "conversation_count": 1,
+    "first_interaction": "2025-07-15T13:10:41.146936",
+    "last_interaction": "2025-07-15T13:10:41.146936",
+    "favorite_products": [],
+    "budget_range": null,
+    "special_occasions": []
+  },
+  "flow_test_user_3": {
+    "user_id": "flow_test_user_3",
+    "name": null,
+    "preferences": {},
+    "purchase_history": [],
+    "conversation_count": 1,
+    "first_interaction": "2025-07-15T13:10:43.799773",
+    "last_interaction": "2025-07-15T13:10:43.799773",
+    "favorite_products": [],
+    "budget_range": null,
+    "special_occasions": []
+  }
+}

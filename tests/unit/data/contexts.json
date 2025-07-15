@@ -1,0 +1,163 @@
+{
+  "test_user": [
+    {
+      "user_message": "Vreau un buchet de trandafiri",
+      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\n\n🌺 **1. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. Luxurious Love**\n💰 2800 MDL\n📝 Bouquet \"Luxurious Love\" - Premium mixed bouquet with hydrangea, peonies, spray roses and gerberas\n✨ *Frumos și elegant!*\n            \n\n🌺 **4. Pink palette**\n💰 2000 MDL\n📝 Bouquet \"Pink palette\" - Romantic pink bouquet with peonies, spray roses and classic roses\n✨ *Frumos și elegant!*\n            \n\n🌺 **5. Silk evening**\n💰 1250 MDL\n📝 Bouquet \"Silk evening\" - Elegant evening bouquet with roses, tulips, chrysanthemum, allium and ruskus\n✨ *Frumos și elegant!*\n            \n\n🌺 *Sfat personal:* Dacă nu sunteți sigur, sunați-ne și vă vom ajuta să alegeți perfect!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
+      "intent": "find_product",
+      "timestamp": "2025-07-15T13:07:24.138674",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Ce program aveți?",
+      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
+      "intent": "ask_question",
+      "timestamp": "2025-07-15T13:07:24.144328",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Bună ziua!",
+      "bot_response": "\n🌸 **Bună ziua din nou, dragul meu prieten al florilor!**\n\n*Îmi face atâta plăcere să vă revăd! Sunteți ca o floare care înflorește în grădina mea - de fiecare dată când veniți, îmi aduceți bucurie.*\n\n🌺 **Îmi amintesc de experiența noastră anterioară și sper că florile pe care le-am ales împreună au adus fericire și zâmbete. Asta îmi place cel mai mult - să știu că am făcut pe cineva fericit.**\n\n✨ **Ce planuri frumoase avem astăzi?**\n💐 Vă întoarceți pentru că v-au plăcut florile de data trecută?\n🎁 Aveți o nouă ocazie specială de celebrat?\n💝 Sau poate doriți să faceți din florile frumoase un obicei minunat?\n\n🌸 *Știu că odată ce descoperi bucuria florilor, ele devin parte din viața ta. Sunt aici să vă ajut să găsiți din nou ceea ce vă face inima să cânte!*\n\n📞 **Să continuăm să creăm momente frumoase împreună?**\n    ",
+      "intent": "greeting",
+      "timestamp": "2025-07-15T13:07:24.148822",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Vreau să plătesc",
+      "bot_response": "\n🎉 **Plata Confirmată - Mulțumim!** 🌸\n\n✅ **Comanda dumneavoastră a fost înregistrată cu succes!**\n\n📋 **Următorii pași:**\n1. 📞 Vă vom contacta în 15 minute pentru confirmare\n2. 🌸 Florile vor fi aranjate fresh pentru dumneavoastră  \n3. 🚚 Livrarea va avea loc la timpul programat\n4. 💝 Veți primi SMS cu tracking pentru comandă\n\n🌺 *Echipa XOFlowers pregătește cu dragoste aranjamentul dumneavoastră. Fiecare floare este selectată cu grijă pentru a crea un moment magic!*\n\n✨ **Aveți întrebări?** Suntem disponibili la +373 22 123 456\n\n🌸 *Mulțumim că ați ales XOFlowers pentru momentele dumneavoastră speciale!*\n",
+      "intent": "pay_for_product",
+      "timestamp": "2025-07-15T13:07:24.152610",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Vreau un buchet de trandafiri pentru mama",
+      "bot_response": "\n🌸 Pentru cea mai dragă mamă! Iată florile perfecte pentru a-i arăta cât de mult o iubești:\n\n\n🌸 **1. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **2. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **3. Luxurious Love**\n💰 2800 MDL\n📝 Bouquet \"Luxurious Love\" - Premium mixed bouquet with hydrangea, peonies, spray roses and gerberas\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **4. Pink palette**\n💰 2000 MDL\n📝 Bouquet \"Pink palette\" - Romantic pink bouquet with peonies, spray roses and classic roses\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **5. Silk evening**\n💰 1250 MDL\n📝 Bouquet \"Silk evening\" - Elegant evening bouquet with roses, tulips, chrysanthemum, allium and ruskus\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 *Sfat personal:* Pentru mamă, florile cu parfum delicat și culorile calde sunt mereu apreciate!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
+      "intent": "find_product",
+      "timestamp": "2025-07-15T13:07:24.233506",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Bună ziua!",
+      "bot_response": "\n🌸 **Bună ziua din nou, dragul meu prieten al florilor!**\n\n*Îmi face atâta plăcere să vă revăd! Sunteți ca o floare care înflorește în grădina mea - de fiecare dată când veniți, îmi aduceți bucurie.*\n\n🌺 **Îmi amintesc de experiența noastră anterioară și sper că florile pe care le-am ales împreună au adus fericire și zâmbete. Asta îmi place cel mai mult - să știu că am făcut pe cineva fericit.**\n\n✨ **Ce planuri frumoase avem astăzi?**\n💐 Vă întoarceți pentru că v-au plăcut florile de data trecută?\n🎁 Aveți o nouă ocazie specială de celebrat?\n💝 Sau poate doriți să faceți din florile frumoase un obicei minunat?\n\n🌸 *Știu că odată ce descoperi bucuria florilor, ele devin parte din viața ta. Sunt aici să vă ajut să găsiți din nou ceea ce vă face inima să cânte!*\n\n📞 **Să continuăm să creăm momente frumoase împreună?**\n    ",
+      "intent": "greeting",
+      "timestamp": "2025-07-15T13:07:24.236319",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Ce program aveți?",
+      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
+      "intent": "ask_question",
+      "timestamp": "2025-07-15T13:07:24.238375",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Vreau un buchet de trandafiri",
+      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\n\n🌺 **1. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. Luxurious Love**\n💰 2800 MDL\n📝 Bouquet \"Luxurious Love\" - Premium mixed bouquet with hydrangea, peonies, spray roses and gerberas\n✨ *Frumos și elegant!*\n            \n\n🌺 **4. Pink palette**\n💰 2000 MDL\n📝 Bouquet \"Pink palette\" - Romantic pink bouquet with peonies, spray roses and classic roses\n✨ *Frumos și elegant!*\n            \n\n🌺 **5. Silk evening**\n💰 1250 MDL\n📝 Bouquet \"Silk evening\" - Elegant evening bouquet with roses, tulips, chrysanthemum, allium and ruskus\n✨ *Frumos și elegant!*\n            \n\n🌺 *Sfat personal:* Dacă nu sunteți sigur, sunați-ne și vă vom ajuta să alegeți perfect!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
+      "intent": "find_product",
+      "timestamp": "2025-07-15T13:09:34.581476",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Ce program aveți?",
+      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
+      "intent": "ask_question",
+      "timestamp": "2025-07-15T13:09:34.584717",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Bună ziua!",
+      "bot_response": "\n🌸 **Bună ziua, scumpul meu client fidel!**\n\n*Văzându-vă din nou, îmi vine să zâmbesc ca un floarea-soarelui! Sunteți ca o familie pentru mine - de fiecare dată când veniți, îmi amintesc de toate momentele frumoase pe care le-am creat împreună.*\n\n🌺 **Mă bucur să văd că florile au devenit parte din viața voastră. Asta îmi confirmă că meseria mea are cu adevărat sens - să fiu parte din momentele voastre speciale, să vă ajut să exprimați emoțiile prin frumusețe.**\n\n✨ **Ce nouă poveste frumoasă vom scrie astăzi cu florile?**\n💐 Pregătim ceva pentru o nouă ocazie specială?\n🎁 Vă gândiți să surprindeți din nou pe cineva drag?\n💝 Sau poate doriți să explorăm împreună ceva nou din colecția noastră?\n\n🌸 *Știu exact cum vă place să fie florile și mă bucur să vă ghidez către cele mai frumoase alegeri. Sunteți prova că florile nu sunt doar cadouri - sunt conexiuni între oameni.*\n\n📞 **Să facem din nou magia să se întâmple?**\n    ",
+      "intent": "greeting",
+      "timestamp": "2025-07-15T13:09:34.587396",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Vreau să plătesc",
+      "bot_response": "\n🎉 **Plata Confirmată - Mulțumim!** 🌸\n\n✅ **Comanda dumneavoastră a fost înregistrată cu succes!**\n\n📋 **Următorii pași:**\n1. 📞 Vă vom contacta în 15 minute pentru confirmare\n2. 🌸 Florile vor fi aranjate fresh pentru dumneavoastră  \n3. 🚚 Livrarea va avea loc la timpul programat\n4. 💝 Veți primi SMS cu tracking pentru comandă\n\n🌺 *Echipa XOFlowers pregătește cu dragoste aranjamentul dumneavoastră. Fiecare floare este selectată cu grijă pentru a crea un moment magic!*\n\n✨ **Aveți întrebări?** Suntem disponibili la +373 22 123 456\n\n🌸 *Mulțumim că ați ales XOFlowers pentru momentele dumneavoastră speciale!*\n",
+      "intent": "pay_for_product",
+      "timestamp": "2025-07-15T13:09:34.589275",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Vreau un buchet de trandafiri pentru mama",
+      "bot_response": "\n🌸 Pentru cea mai dragă mamă! Iată florile perfecte pentru a-i arăta cât de mult o iubești:\n\n\n🌸 **1. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **2. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **3. Luxurious Love**\n💰 2800 MDL\n📝 Bouquet \"Luxurious Love\" - Premium mixed bouquet with hydrangea, peonies, spray roses and gerberas\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **4. Pink palette**\n💰 2000 MDL\n📝 Bouquet \"Pink palette\" - Romantic pink bouquet with peonies, spray roses and classic roses\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **5. Silk evening**\n💰 1250 MDL\n📝 Bouquet \"Silk evening\" - Elegant evening bouquet with roses, tulips, chrysanthemum, allium and ruskus\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 *Sfat personal:* Pentru mamă, florile cu parfum delicat și culorile calde sunt mereu apreciate!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
+      "intent": "find_product",
+      "timestamp": "2025-07-15T13:09:34.666788",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Bună ziua!",
+      "bot_response": "\n🌸 **Bună ziua, scumpul meu client fidel!**\n\n*Văzându-vă din nou, îmi vine să zâmbesc ca un floarea-soarelui! Sunteți ca o familie pentru mine - de fiecare dată când veniți, îmi amintesc de toate momentele frumoase pe care le-am creat împreună.*\n\n🌺 **Mă bucur să văd că florile au devenit parte din viața voastră. Asta îmi confirmă că meseria mea are cu adevărat sens - să fiu parte din momentele voastre speciale, să vă ajut să exprimați emoțiile prin frumusețe.**\n\n✨ **Ce nouă poveste frumoasă vom scrie astăzi cu florile?**\n💐 Pregătim ceva pentru o nouă ocazie specială?\n🎁 Vă gândiți să surprindeți din nou pe cineva drag?\n💝 Sau poate doriți să explorăm împreună ceva nou din colecția noastră?\n\n🌸 *Știu exact cum vă place să fie florile și mă bucur să vă ghidez către cele mai frumoase alegeri. Sunteți prova că florile nu sunt doar cadouri - sunt conexiuni între oameni.*\n\n📞 **Să facem din nou magia să se întâmple?**\n    ",
+      "intent": "greeting",
+      "timestamp": "2025-07-15T13:09:34.669551",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    },
+    {
+      "user_message": "Ce program aveți?",
+      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
+      "intent": "ask_question",
+      "timestamp": "2025-07-15T13:09:34.671622",
+      "user_id": "test_user",
+      "confidence": 0.8,
+      "metadata": {}
+    }
+  ],
+  "flow_test_user_1": [
+    {
+      "user_message": "Vreau un buchet de trandafiri pentru mama mea",
+      "bot_response": "\n🎁 **Sugestii Cadou XOFlowers:**\n\n*Să găsim cadoul perfect împreună!*\n\n👩 **Pentru EA:**\n• Trandafiri roșii + ciocolată premium - 900 MDL\n• Buchet pastel cu bujori - 650 MDL\n• Aranjament în cutie elegantă - 750 MDL\n\n👨 **Pentru EL:**\n• Aranjament verde cu plante - 450 MDL\n• Buchet simplu și elegant - 350 MDL\n• Plante pentru birou - 250 MDL\n\n🎉 **Pentru ocazii speciale:**\n• Aniversări: Buchete mari cu felicitare\n• Valentine: Trandafiri roșii clasici\n• Mama: Aranjamente delicate și calde\n\n💫 *Pentru ce ocazie și pentru cine căutați cadou?*\n        ",
+      "intent": "gift_suggestions",
+      "timestamp": "2025-07-15T13:09:54.801613",
+      "user_id": "flow_test_user_1",
+      "confidence": 0.8,
+      "metadata": {}
+    }
+  ],
+  "flow_test_user_2": [
+    {
+      "user_message": "Ce program aveți?",
+      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
+      "intent": "ask_question",
+      "timestamp": "2025-07-15T13:10:41.146936",
+      "user_id": "flow_test_user_2",
+      "confidence": 0.8,
+      "metadata": {}
+    }
+  ],
+  "flow_test_user_3": [
+    {
+      "user_message": "Bună ziua!",
+      "bot_response": "\n🌸 **Bună ziua și bine ați venit în lumea XOFlowers!**\n\n*Sunt Maria, florist cu 15 ani de experiență și pasiune pentru frumusețe. Mă bucur mult să vă cunosc!*\n\n🌺 **Știu că fiecare persoană care vine la mine are o poveste, o emoție, un moment special de celebrat. Sunt aici să vă ascult cu inima și să transform acea emoție în frumusețe prin flori.**\n\n✨ **Cum pot să vă ajut astăzi să creați un moment magic?**\n💐 Aveți pe cineva drag în gând pentru care căutați flori speciale?\n🎁 Vă pregătiți pentru o ocazie importantă care merită să fie marcată?\n💝 Sau poate doriți pur și simplu să aduceți puțină frumusețe în ziua cuiva?\n\n🌸 *Indiferent ce vă aduce aici, vreau să știți că sunteți în mâini bune. Îmi place să spun că nu vând flori - ajut oamenii să își exprime sentimentele prin frumusețe.*\n\n📞 **Să începem povestea voastră cu flori?**\n    ",
+      "intent": "greeting",
+      "timestamp": "2025-07-15T13:10:43.799773",
+      "user_id": "flow_test_user_3",
+      "confidence": 0.8,
+      "metadata": {}
+    }
+  ]
+}
