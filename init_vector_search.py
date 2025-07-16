@@ -1,8 +1,5 @@
-# ОБНОВЛЕННЫЙ ФАЙЛ: init_vector_search.py 
-# Заменить существующий файл
-
 """
-Inițializarea căutării vectoriale pentru noul CSV
+Исправленная инициализация векторного поиска для универсальной системы
 """
 
 import sys
@@ -12,7 +9,7 @@ import os
 sys.path.insert(0, 'src')
 
 def main():
-    print("🌸 Inițializarea căutării vectoriale XOFlowers (CSV nou)")
+    print("🌍 Inițializarea sistemului universal XOFlowers")
     print("=" * 60)
     
     # Verificăm dependențele
@@ -62,15 +59,15 @@ def main():
             for header in headers:
                 print(f"   • {header}")
             
-            # Contorizăm produsele
+            # Contorizăm produsele (ИСПРАВЛЕНО: проверяем "True" с большой буквы)
             product_count = 0
             valid_count = 0
             
             for row in reader:
                 if row.get('chunk_type') == 'product':
                     product_count += 1
-                    # Verificăm dacă produsul este valid
-                    if (row.get('product_exists', 'false').lower() == 'true' and 
+                    # ИСПРАВЛЕНО: проверяем "True" вместо "true"
+                    if (row.get('product_exists', 'False') == 'True' and 
                         row.get('primary_text', '').strip() and 
                         row.get('price', '0') != '0'):
                         valid_count += 1
@@ -82,66 +79,104 @@ def main():
         print(f"❌ Eroare la citirea CSV: {e}")
         return False
     
-    # Inițializăm căutarea
-    print("\n4. Inițializăm căutarea vectorială...")
+    # Inițializăm sistemul universal
+    print("\n4. Inițializăm sistemul universal...")
     try:
-        from database.vector_search import vector_search
-        print("✅ Căutarea vectorială creată")
+        from database.vector_search import universal_search
+        print("✅ Sistemul universal creat")
         
         # Încărcăm datele
-        print("\n5. Încărcăm produsele...")
+        print("\n5. Încărcăm produsele în ambele coллекции...")
         if csv_file == new_csv:
-            vector_search.load_products_from_csv("final_products_case_standardized.csv")
+            universal_search.load_products_from_csv("final_products_case_standardized.csv")
         else:
-            vector_search.load_products_from_csv("chunks_data.csv")
+            universal_search.load_products_from_csv("chunks_data.csv")
         
         # Verificăm statisticile
         print("\n6. Verificăm statisticile...")
-        stats = vector_search.get_stats()
+        stats = universal_search.get_stats()
         
         if 'error' in stats:
             print(f"❌ Eroare statistici: {stats['error']}")
         else:
-            print(f"✅ Statistici database:")
-            print(f"   • Total produse: {stats.get('total_products', 0)}")
-            print(f"   • Produse verificate: {stats.get('verified_products', 0)}")
-            print(f"   • URL-uri funcționale: {stats.get('functional_urls', 0)}")
-            print(f"   • Categorii: {stats.get('categories_count', 0)}")
+            print(f"✅ Statistici sistem:")
+            print(f"   🛍️ Total produse: {stats.get('total_products', 0)}")
+            print(f"   🌸 Produse florale: {stats.get('flower_products', 0)}")
+            print(f"   ✅ Produse verificate: {stats.get('verified_products', 0)}")
+            print(f"   🔗 URL-uri funcționale: {stats.get('functional_urls', 0)}")
+            print(f"   📂 Categorii: {stats.get('categories_count', 0)}")
             
             # Afișăm categoriile
             categories = stats.get('categories', [])
             if categories:
-                print(f"\n📂 Categorii găsite:")
-                for i, category in enumerate(categories, 1):
-                    print(f"   {i}. {category}")
+                print(f"\n📂 Categorii disponibile:")
+                flower_cats = []
+                other_cats = []
+                
+                for category in categories:
+                    if any(word in category for word in ['Bouquet', 'Rose', 'Peonies', 'Wedding', 'Bride', 'Premium']):
+                        flower_cats.append(category)
+                    else:
+                        other_cats.append(category)
+                
+                if flower_cats:
+                    print(f"   🌸 Categorii florale:")
+                    for i, category in enumerate(flower_cats, 1):
+                        print(f"      {i}. {category}")
+                
+                if other_cats:
+                    print(f"   🎁 Alte categorii:")
+                    for i, category in enumerate(other_cats, 1):
+                        print(f"      {i}. {category}")
         
         # Testăm căutarea
-        print("\n7. Testăm căutarea...")
-        test_queries = ["trandafiri", "buchet", "flori pentru mama"]
+        print("\n7. Testăm căutarea universală...")
         
-        for query in test_queries:
-            results = vector_search.search(query, limit=2)
-            print(f"   '{query}' → {len(results)} rezultate")
+        test_queries = [
+            ("trandafiri roșii", "flowers"),
+            ("difuzor aromă", "all_products"), 
+            ("cadou frumos", "smart")
+        ]
+        
+        for query, search_type in test_queries:
+            print(f"\n   🔍 Test '{query}' ({search_type}):")
             
-            for result in results:
-                verified = "✅" if result.get('is_verified') == 'true' else "⚠️"
-                functional = "🔗" if result.get('url_functional') == 'true' else "❌"
-                print(f"      {verified}{functional} {result['name'][:40]}...")
+            if search_type == "flowers":
+                results = universal_search.search_flowers_only(query, limit=2)
+            elif search_type == "all_products":
+                results = universal_search.search_all_products(query, limit=2)
+            else:
+                results = universal_search.smart_search(query, limit=2)
+            
+            print(f"      Găsite: {len(results)} rezultate")
+            
+            for i, result in enumerate(results, 1):
+                verified = "✅" if result.get('is_verified') else "⚠️"
+                source = result.get('source', 'N/A')
+                print(f"      {i}. {verified} [{source}] {result['name'][:50]}...")
+                print(f"         💰 {result['price']} MDL | 📂 {result['category']}")
         
-        print(f"\n🎉 Căutarea vectorială este gata de funcționare!")
+        print(f"\n🎉 Sistemul universal este gata de funcționare!")
         print(f"📊 Folosind fișierul: {csv_file}")
+        print(f"🚀 Capabilități: căutare flowers + all products + smart detection")
         
         return True
         
     except Exception as e:
         print(f"❌ Eroare la inițializare: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
 if __name__ == "__main__":
     success = main()
     if success:
         print("\n✅ Inițializarea finalizată cu succes!")
-        print("🚀 Sistemul este gata pentru căutări vectoriale!")
+        print("🌍 Sistemul universal este gata!")
+        print("\n💡 Funcții disponibile:")
+        print("   🧠 smart_search() - detectează automat tipul")
+        print("   🌸 search_flowers_only() - doar flori")
+        print("   🛍️ search_all_products() - toate produsele")
     else:
         print("\n❌ Inițializarea a eșuat!")
         print("🔧 Verificați erorile de mai sus și reîncercați.")

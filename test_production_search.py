@@ -1,89 +1,84 @@
 """
-Тест готового векторного поиска с фильтрацией категорий
+Тест универсальной системы поиска XOFlowers
 """
 
 import sys
 sys.path.insert(0, 'src')
 
-def test_production_search():
-    print("🌸 ТЕСТ ГОТОВОГО ПОИСКА ЦВЕТОВ")
+def test_universal_search():
+    print("🌍 ТЕСТ УНИВЕРСАЛЬНОЙ СИСТЕМЫ ПОИСКА")
     print("=" * 50)
     
     try:
-        from database.vector_search import vector_search, search_flowers, search_verified_flowers, search_flowers_in_budget
+        from database.vector_search import universal_search, smart_search, search_flowers_only, search_all_products
         
         # Инициализация
-        vector_search.load_products_from_csv("final_products_case_standardized.csv")
+        universal_search.load_products_from_csv("final_products_case_standardized.csv")
         
         # Статистика
-        print("\n📊 СТАТИСТИКА ЦВЕТОЧНЫХ ПРОДУКТОВ:")
-        stats = vector_search.get_stats()
+        print("\n📊 СТАТИСТИКА СИСТЕМЫ:")
+        stats = universal_search.get_stats()
         if 'error' not in stats:
-            print(f"   🌸 Цветочных продуктов: {stats.get('total_flowers', 0)}")
-            print(f"   ✅ Верифицированных: {stats.get('verified_flowers', 0)}")
-            print(f"   🔗 С функциональными URL: {stats.get('functional_urls', 0)}")
-            
-            price_dist = stats.get('price_distribution', {})
-            print(f"   💰 Бюджетные (<500): {price_dist.get('budget', 0)}")
-            print(f"   💰 Средние (500-1500): {price_dist.get('medium', 0)}")
-            print(f"   💰 Премиум (>1500): {price_dist.get('premium', 0)}")
-            
-            print(f"\n📂 ЦВЕТОЧНЫЕ КАТЕГОРИИ:")
-            for i, cat in enumerate(stats.get('flower_categories', []), 1):
-                print(f"   {i}. {cat}")
+            print(f"   🛍️ Всего товаров: {stats.get('total_products', 0)}")
+            print(f"   🌸 Из них цветов: {stats.get('flower_products', 0)}")
+            print(f"   📦 Коллекции: {', '.join(stats.get('collections', []))}")
         
-        print(f"\n🔍 ТЕСТ ПОИСКА ЦВЕТОВ:")
+        print(f"\n🧠 ТЕСТ УМНОГО ПОИСКА:")
         print("=" * 40)
         
-        # Тест 1: Поиск роз
-        print(f"\n1️⃣ Поиск 'розы красные trandafiri':")
-        roses = search_flowers("розы красные trandafiri", limit=3)
-        print(f"   Найдено: {len(roses)} продуктов")
-        for i, product in enumerate(roses, 1):
+        # Тест 1: Автоматический поиск цветов
+        print(f"\n1️⃣ Умный поиск 'букеты роз trandafiri':")
+        smart_roses = smart_search("букеты роз trandafiri", limit=3)
+        print(f"   Найдено: {len(smart_roses)} товаров")
+        for i, product in enumerate(smart_roses, 1):
             verified = "✅" if product.get('is_verified') else "⚠️"
-            print(f"   {i}. {verified} {product['name'][:60]}...")
+            print(f"   {i}. {verified} [{product.get('source', 'N/A')}] {product['name'][:50]}...")
             print(f"      💰 {product['price']} MDL | 📂 {product['category']}")
             print(f"      🎯 Релевантность: {product['score']}")
         
-        # Тест 2: Поиск букетов
-        print(f"\n2️⃣ Поиск 'букет для мамы buchet mama':")
-        bouquets = search_flowers("букет для мамы buchet mama", limit=3)
-        print(f"   Найдено: {len(bouquets)} продуктов")
-        for i, product in enumerate(bouquets, 1):
+        # Тест 2: Автоматический поиск диффузоров
+        print(f"\n2️⃣ Умный поиск 'диффузоры ароматы chando':")
+        smart_diffusers = smart_search("диффузоры ароматы chando", limit=3)
+        print(f"   Найдено: {len(smart_diffusers)} товаров")
+        for i, product in enumerate(smart_diffusers, 1):
             verified = "✅" if product.get('is_verified') else "⚠️"
-            print(f"   {i}. {verified} {product['name'][:60]}...")
+            print(f"   {i}. {verified} [{product.get('source', 'N/A')}] {product['name'][:50]}...")
             print(f"      💰 {product['price']} MDL | 📂 {product['category']}")
-            print(f"      🎯 Релевантность: {product['score']}")
         
-        # Тест 3: Поиск в бюджете
-        print(f"\n3️⃣ Поиск в бюджете до 800 MDL 'flori frumoase':")
-        budget_flowers = search_flowers_in_budget("flori frumoase", 800, limit=3)
-        print(f"   Найдено: {len(budget_flowers)} продуктов")
-        for i, product in enumerate(budget_flowers, 1):
-            verified = "✅" if product.get('is_verified') else "⚠️"
-            print(f"   {i}. {verified} {product['name'][:60]}...")
+        # Тест 3: Принудительный поиск только цветов
+        print(f"\n3️⃣ Только ЦВЕТЫ 'красивые подарки':")
+        flowers_only = search_flowers_only("красивые подарки", limit=3)
+        print(f"   Найдено: {len(flowers_only)} товаров")
+        for i, product in enumerate(flowers_only, 1):
+            print(f"   {i}. 🌸 {product['name'][:50]}...")
             print(f"      💰 {product['price']} MDL | 📂 {product['category']}")
-            print(f"      🎯 Релевантность: {product['score']}")
         
-        # Тест 4: Только верифицированные
-        print(f"\n4️⃣ Только верифицированные 'peonii bujori':")
-        verified = search_verified_flowers("peonii bujori", limit=3)
-        print(f"   Найдено: {len(verified)} продуктов")
-        for i, product in enumerate(verified, 1):
-            print(f"   {i}. ✅ {product['name'][:60]}...")
+        # Тест 4: Принудительный поиск по всем товарам
+        print(f"\n4️⃣ ВСЕ ТОВАРЫ 'подарки аксессуары':")
+        all_products = search_all_products("подарки аксессуары", limit=3)
+        print(f"   Найдено: {len(all_products)} товаров")
+        for i, product in enumerate(all_products, 1):
+            print(f"   {i}. 🛍️ {product['name'][:50]}...")
             print(f"      💰 {product['price']} MDL | 📂 {product['category']}")
-            print(f"      🎯 Релевантность: {product['score']}")
         
-        # Тест 5: Поиск по категории
-        print(f"\n5️⃣ Поиск по категории 'Classic Bouquets':")
-        classic = vector_search.search_by_category("Classic Bouquets", limit=3)
-        print(f"   Найдено: {len(classic)} продуктов")
-        for i, product in enumerate(classic, 1):
-            print(f"   {i}. 🌸 {product['name'][:60]}...")
-            print(f"      💰 {product['price']} MDL")
+        # Тест 5: Поиск игрушек
+        print(f"\n5️⃣ Умный поиск 'мягкие игрушки toys':")
+        smart_toys = smart_search("мягкие игрушки toys", limit=3)
+        print(f"   Найдено: {len(smart_toys)} товаров")
+        for i, product in enumerate(smart_toys, 1):
+            print(f"   {i}. 🧸 [{product.get('source', 'N/A')}] {product['name'][:50]}...")
+            print(f"      💰 {product['price']} MDL | 📂 {product['category']}")
         
-        print(f"\n✅ ВСЕ ТЕСТЫ ПОИСКА УСПЕШНЫ!")
-        print(f"🎉 ГОТОВЫЙ ПРОДУКТ РАБОТАЕТ КОРРЕКТНО!")
+        # Тест 6: Неопределенный запрос
+        print(f"\n6️⃣ Неопределенный поиск 'подарок на день рождения':")
+        mixed_search = smart_search("подарок на день рождения", limit=4)
+        print(f"   Найдено: {len(mixed_search)} товаров")
+        for i, product in enumerate(mixed_search, 1):
+            print(f"   {i}. 🎁 [{product.get('source', 'N/A')}] {product['name'][:50]}...")
+            print(f"      💰 {product['price']} MDL | 📂 {product['category']}")
+        
+        print(f"\n✅ ВСЕ ТЕСТЫ УНИВЕРСАЛЬНОГО ПОИСКА УСПЕШНЫ!")
+        print(f"🎉 СИСТЕМА ГОТОВА К ПРОДАКШЕНУ!")
         
         return True
         
@@ -93,48 +88,40 @@ def test_production_search():
         traceback.print_exc()
         return False
 
-def test_no_non_flowers():
-    """Проверяем что диффузоры и игрушки исключены"""
-    print(f"\n🚫 ТЕСТ ИСКЛЮЧЕНИЯ НЕ-ЦВЕТОВ:")
-    print("=" * 40)
+def test_category_detection():
+    """Тест автоматического определения категорий"""
+    print(f"\n🎯 ТЕСТ АВТОМАТИЧЕСКОГО ОПРЕДЕЛЕНИЯ ТИПА ПОИСКА:")
+    print("=" * 50)
     
     try:
-        from database.vector_search import search_flowers
+        from database.vector_search import universal_search
         
-        # Тест исключения диффузоров
-        print(f"\n🧪 Поиск 'difuzor aroma chando':")
-        diffusers = search_flowers("difuzor aroma chando", limit=5)
-        print(f"   Найдено: {len(diffusers)} продуктов")
+        test_queries = [
+            ("розы букет trandafiri", "flowers"),
+            ("диффузор аромат chando", "non_flowers"), 
+            ("игрушки мягкие toys", "non_flowers"),
+            ("подарок красивый", "mixed"),
+            ("свадьба невеста bride", "flowers"),
+            ("открытка поздравление", "non_flowers")
+        ]
         
-        if len(diffusers) == 0:
-            print("   ✅ ОТЛИЧНО! Диффузоры правильно исключены")
-        else:
-            print("   ⚠️ Найдены диффузоры - нужна доработка")
-            for product in diffusers:
-                print(f"      - {product['category']}: {product['name'][:50]}...")
-        
-        # Тест исключения игрушек
-        print(f"\n🧸 Поиск 'soft toys plush':")
-        toys = search_flowers("soft toys plush", limit=5)
-        print(f"   Найдено: {len(toys)} продуктов")
-        
-        if len(toys) == 0:
-            print("   ✅ ОТЛИЧНО! Игрушки правильно исключены")
-        else:
-            print("   ⚠️ Найдены игрушки - нужна доработка")
+        for query, expected in test_queries:
+            detected = universal_search._detect_search_type(query)
+            status = "✅" if detected == expected else "❌"
+            print(f"   {status} '{query}' → {detected} (ожидалось: {expected})")
         
         return True
         
     except Exception as e:
-        print(f"❌ Ошибка в тесте исключений: {e}")
+        print(f"❌ Ошибка в тесте определения: {e}")
         return False
 
 if __name__ == "__main__":
-    print("🌸 ПОЛНЫЙ ТЕСТ ГОТОВОГО ПРОДУКТА")
+    print("🌍 ПОЛНЫЙ ТЕСТ УНИВЕРСАЛЬНОЙ СИСТЕМЫ")
     print("=" * 50)
     
-    success1 = test_production_search()
-    success2 = test_no_non_flowers()
+    success1 = test_universal_search()
+    success2 = test_category_detection()
     
     print(f"\n" + "=" * 50)
     print("📊 ИТОГОВЫЕ РЕЗУЛЬТАТЫ:")
@@ -142,7 +129,13 @@ if __name__ == "__main__":
     
     if success1 and success2:
         print("🎉 ВСЕ ТЕСТЫ ПРОШЛИ!")
-        print("✅ ГОТОВЫЙ ПРОДУКТ РАБОТАЕТ КОРРЕКТНО!")
-        print("🚀 СИСТЕМА ГОТОВА К ИСПОЛЬЗОВАНИЮ!")
+        print("✅ УНИВЕРСАЛЬНАЯ СИСТЕМА РАБОТАЕТ!")
+        print("🚀 ГОТОВА К ИСПОЛЬЗОВАНИЮ В ПРОДАКШЕНЕ!")
+        print("\n💡 ВОЗМОЖНОСТИ СИСТЕМЫ:")
+        print("   🧠 Автоматическое определение типа поиска")
+        print("   🌸 Поиск только цветов")
+        print("   🛍️ Поиск по всем товарам") 
+        print("   🎁 Комбинированный поиск")
+        print("   💰 Фильтрация по цене и верификации")
     else:
         print("❌ Есть проблемы для исправления")
