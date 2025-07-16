@@ -1,8 +1,6 @@
-# ОБНОВЛЕННЫЙ ФАЙЛ: src/database/vector_search.py
-# Заменить существующий файл на этот код
-
 """
-Простой векторный поиск для XOFlowers (обновлен для нового CSV)
+ГОТОВЫЙ векторный поиск для XOFlowers с корректной фильтрацией
+Исключает диффузоры, игрушки и аксессуары - показывает только ЦВЕТЫ
 """
 
 import os
@@ -10,10 +8,10 @@ import csv
 import chromadb
 from sentence_transformers import SentenceTransformer
 
-class SimpleVectorSearch:
+class ProductionVectorSearch:
     def __init__(self):
         # Создаем базу данных ChromaDB
-        self.client = chromadb.PersistentClient(path="./chroma_db")
+        self.client = chromadb.PersistentClient(path="./chroma_db_flowers")
         
         # Загружаем модель для создания векторов
         self.model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -24,14 +22,36 @@ class SimpleVectorSearch:
         except:
             self.collection = self.client.get_collection("products")
         
-        print("✅ Векторный поиск готов!")
+        # Категории ЦВЕТОВ (исключаем аксессуары)
+        self.flower_categories = {
+            "Author'S Bouquets",
+            "Classic Bouquets", 
+            "French Roses",
+            "Mono/Duo Bouquets",
+            "Basket / Boxes With Flowers",
+            "Bride'S Bouquet",
+            "Premium",
+            "Peonies",
+            "Mourning Flower Arrangement",
+            "St. Valentine'S Day"
+        }
+        
+        # Категории которые НЕ цветы (исключаем из поиска)
+        self.non_flower_categories = {
+            "Chando",  # Диффузоры
+            "Soft Toys",  # Игрушки
+            "Greeting Card",  # Открытки
+            "Additional Accessories / Vases",  # Аксессуары
+            "Sweets"  # Сладости
+        }
+        
+        print("✅ Production vector search initialized with category filtering")
     
     def load_products_from_csv(self, csv_filename="final_products_case_standardized.csv"):
-        """Загружаем продукты из нового CSV файла"""
+        """Загружаем только ЦВЕТОЧНЫЕ продукты из CSV"""
         csv_path = f"data/{csv_filename}"
         
         if not os.path.exists(csv_path):
-            # Попробуем старый файл как fallback
             csv_path = "data/chunks_data.csv"
             if not os.path.exists(csv_path):
                 print("❌ Файлы данных не найдены!")
@@ -43,6 +63,7 @@ class SimpleVectorSearch:
         products = []
         total_rows = 0
         valid_products = 0
+        excluded_products = 0
         
         with open(csv_path, 'r', encoding='utf-8') as file:
             reader = csv.DictReader(file)
@@ -54,14 +75,20 @@ class SimpleVectorSearch:
                 if row.get('chunk_type') != 'product':
                     continue
                 
-                # Фильтруем только существующие и верифицированные продукты
+                # ИСКЛЮЧАЕМ НЕ-ЦВЕТОЧНЫЕ категории
+                category = row.get('category', '')
+                if category in self.non_flower_categories:
+                    excluded_products += 1
+                    continue
+                
+                # Фильтруем только существующие продукты
                 if not self._is_valid_product(row):
                     continue
                 
                 valid_products += 1
                 
-                # Создаем текст для поиска
-                search_text = self._create_search_text(row)
+                # Создаем улучшенный текст для поиска
+                search_text = self._create_enhanced_search_text(row)
                 
                 # Выбираем лучший URL
                 best_url = self._get_best_url(row)
@@ -69,98 +96,249 @@ class SimpleVectorSearch:
                 product = {
                     'id': row.get('chunk_id', f'product_{valid_products}'),
                     'text': search_text,
-                    'name': row.get('primary_text', '')[:100],
+                    'name': row.get('primary_text', '')[:150],
                     'price': self._parse_price(row.get('price', '0')),
-                    'category': row.get('category', ''),
+                    'category': category,
                     'flowers': row.get('flower_type', ''),
                     'url': best_url,
                     'collection_id': row.get('collection_id', ''),
-                    'is_verified': row.get('is_verified', 'false'),
-                    'url_functional': row.get('url_functional', 'false'),
-                    'product_exists': row.get('product_exists', 'false')
+                    'is_verified': row.get('is_verified', 'False'),
+                    'url_functional': row.get('url_functional', 'False'),
+                    'product_exists': row.get('product_exists', 'False'),
+                    'is_flower_product': 'True'  # Маркируем как цветочный продукт
                 }
                 
                 products.append(product)
         
         print(f"📊 Обработано строк: {total_rows}")
-        print(f"🌸 Валидных продуктов: {valid_products}")
+        print(f"🌸 Цветочных продуктов: {valid_products}")
+        print(f"🚫 Исключено не-цветов: {excluded_products}")
         
-        # Добавляем все продукты в ChromaDB
+        # Добавляем только цветочные продукты в ChromaDB
         if products:
             self._add_products_to_db(products)
         else:
-            print("❌ Продукты не найдены!")
+            print("❌ Цветочные продукты не найдены!")
     
+    def _create_enhanced_search_text(self, row):
+        """Создаем улучшенный текст для поиска цветов"""
+        parts = []
+        
+        # Основной текст
+        primary_text = row.get('primary_text', '')
+        if primary_text:
+            parts.append(primary_text)
+        
+        # Тип цветов с акцентом
+        flower_type = row.get('flower_type', '')
+        if flower_type and flower_type != 'Difuzor aromă':
+            parts.append(f"Цветы: {flower_type}")
+        
+        # Категория (только цветочные)
+        category = row.get('category', '')
+        if category in self.flower_categories:
+            if 'Bouquet' in category:
+                parts.append("Букет цветов")
+            elif 'Rose' in category:
+                parts.append("Розы тандафири")
+            elif 'Peonies' in category:
+                parts.append("Пионы бujori")
+            elif 'Basket' in category:
+                parts.append("Корзина цветов кош")
+            elif 'Wedding' in category or 'Bride' in category:
+                parts.append("Свадебные цветы nuntă")
+        
+        # Цена
+        price = self._parse_price(row.get('price', '0'))
+        if price > 0:
+            parts.append(f"Цена: {price} MDL")
+        
+        # Добавляем ключевые слова для лучшего поиска
+        parts.append("flori buchete cadou")
+        
+        return " | ".join(parts)
+    
+    def search_flowers(self, query, limit=5, price_max=None, verified_only=False):
+        """
+        Поиск ТОЛЬКО цветочных продуктов с улучшенной фильтрацией
+        
+        Args:
+            query: поисковый запрос
+            limit: максимум результатов
+            price_max: максимальная цена
+            verified_only: только верифицированные
+        """
+        try:
+            # Базовые фильтры - только цветочные продукты
+            where_conditions = {
+                "is_flower_product": "True"
+            }
+            
+            # Дополнительные фильтры
+            additional_filters = []
+            
+            if verified_only:
+                additional_filters.append({"is_verified": "True"})
+            
+            if price_max:
+                additional_filters.append({"price": {"$lte": price_max}})
+            
+            # Объединяем фильтры
+            if additional_filters:
+                where_conditions = {
+                    "$and": [where_conditions] + additional_filters
+                }
+            
+            # Выполняем поиск
+            search_params = {
+                'query_texts': [query],
+                'n_results': limit,
+                'where': where_conditions
+            }
+            
+            results = self.collection.query(**search_params)
+            
+            products = []
+            if results['documents'][0]:
+                for i in range(len(results['documents'][0])):
+                    metadata = results['metadatas'][0][i]
+                    
+                    # Дополнительная проверка что это цветы
+                    if metadata.get('category') in self.non_flower_categories:
+                        continue
+                    
+                    product = {
+                        'id': results['ids'][0][i],
+                        'name': metadata['name'],
+                        'price': metadata['price'],
+                        'category': metadata['category'],
+                        'flowers': metadata['flowers'],
+                        'url': metadata['url'],
+                        'score': round(1 - results['distances'][0][i], 3),
+                        'text': results['documents'][0][i],
+                        'is_verified': metadata.get('is_verified') == 'True',
+                        'url_functional': metadata.get('url_functional') == 'True'
+                    }
+                    products.append(product)
+            
+            # Сортируем по релевантности
+            products.sort(key=lambda x: x['score'], reverse=True)
+            
+            return products
+            
+        except Exception as e:
+            print(f"❌ Ошибка поиска цветов: {e}")
+            return []
+    
+    def search_by_category(self, category, limit=10):
+        """Поиск по конкретной цветочной категории"""
+        try:
+            if category not in self.flower_categories:
+                print(f"⚠️ Категория '{category}' не является цветочной")
+                return []
+            
+            where_conditions = {
+                "$and": [
+                    {"category": category},
+                    {"is_flower_product": "True"}
+                ]
+            }
+            
+            results = self.collection.get(
+                where=where_conditions,
+                limit=limit
+            )
+            
+            products = []
+            if results['metadatas']:
+                for i, metadata in enumerate(results['metadatas']):
+                    product = {
+                        'id': results['ids'][i],
+                        'name': metadata['name'],
+                        'price': metadata['price'],
+                        'category': metadata['category'],
+                        'flowers': metadata['flowers'],
+                        'url': metadata['url']
+                    }
+                    products.append(product)
+            
+            return products
+            
+        except Exception as e:
+            print(f"❌ Ошибка поиска по категории: {e}")
+            return []
+    
+    def get_popular_flowers(self, limit=10):
+        """Получить популярные цветочные продукты"""
+        try:
+            # Популярные категории в порядке приоритета
+            popular_categories = [
+                "Classic Bouquets",
+                "French Roses", 
+                "Author'S Bouquets",
+                "Premium"
+            ]
+            
+            products = []
+            for category in popular_categories:
+                category_products = self.search_by_category(category, limit=3)
+                products.extend(category_products)
+                if len(products) >= limit:
+                    break
+            
+            return products[:limit]
+            
+        except Exception as e:
+            print(f"❌ Ошибка получения популярных: {e}")
+            return []
+    
+    def search_in_budget(self, query, max_price, limit=5):
+        """Поиск цветов в заданном бюджете"""
+        return self.search_flowers(
+            query=query,
+            limit=limit,
+            price_max=max_price,
+            verified_only=False
+        )
+    
+    # Остальные методы остаются те же
     def _is_valid_product(self, row):
-        """Проверяем что продукт валиден для индексации"""
-        # Проверяем что продукт существует
-        product_exists = str(row.get('product_exists', 'false')).lower()
-        if product_exists == 'false':
+        """Проверяем валидность продукта"""
+        if row.get('product_exists', 'False') != 'True':
             return False
         
-        # Проверяем что есть описание
         if not row.get('primary_text', '').strip():
             return False
         
-        # Проверяем что есть цена
-        price = row.get('price', '0')
-        if not price or price == '0':
+        price = self._parse_price(row.get('price', '0'))
+        if price <= 0:
             return False
         
         return True
     
-    def _create_search_text(self, row):
-        """Создаем текст для поиска из данных продукта"""
-        parts = []
-        
-        # Основное описание
-        if row.get('primary_text'):
-            parts.append(row['primary_text'])
-        
-        # Тип цветов
-        if row.get('flower_type'):
-            parts.append(row['flower_type'])
-        
-        # Категория
-        if row.get('category'):
-            parts.append(row['category'])
-        
-        return ' | '.join(parts)
-    
     def _get_best_url(self, row):
-        """Выбираем лучший URL из доступных"""
-        # Проверяем функциональность URL
-        url_functional = str(row.get('url_functional', 'false')).lower() == 'true'
-        
-        if url_functional and row.get('url'):
+        """Выбираем лучший URL для продукта"""
+        if row.get('url_fixed') and row.get('url_fixed').strip():
+            return row['url_fixed']
+        elif row.get('url') and row.get('url').strip():
             return row['url']
-        
-        # Если основной URL не работает, пробуем original_url
-        if row.get('original_url'):
+        elif row.get('original_url') and row.get('original_url').strip():
             return row['original_url']
-        
-        # Fallback к обычному URL
-        return row.get('url', '')
+        else:
+            return ""
     
     def _parse_price(self, price_str):
         """Парсим цену из строки"""
         if not price_str:
-            return '0'
+            return 0
         
-        # Если уже число
-        try:
-            float(price_str)
-            return str(price_str)
-        except:
-            pass
-        
-        # Извлекаем числа из строки
         import re
-        numbers = re.findall(r'\d+', str(price_str))
-        if numbers:
-            return numbers[0]
+        clean_price = re.sub(r'[^\d.]', '', str(price_str))
         
-        return '0'
+        try:
+            return float(clean_price)
+        except:
+            return 0
     
     def _add_products_to_db(self, products):
         """Добавляем продукты в базу данных"""
@@ -183,7 +361,8 @@ class SimpleVectorSearch:
             'collection_id': p['collection_id'],
             'is_verified': p['is_verified'],
             'url_functional': p['url_functional'],
-            'product_exists': p['product_exists']
+            'product_exists': p['product_exists'],
+            'is_flower_product': p['is_flower_product']
         } for p in products]
         
         # Добавляем в ChromaDB
@@ -193,116 +372,72 @@ class SimpleVectorSearch:
             ids=ids
         )
         
-        print(f"✅ Загружено {len(products)} продуктов в ChromaDB!")
-    
-    def search(self, query, limit=5, only_verified=True, only_functional=True):
-        """Поиск продуктов с дополнительными фильтрами"""
-        try:
-            # Строим фильтры для поиска
-            where_conditions = {}
-            
-            if only_verified:
-                where_conditions["is_verified"] = "true"
-            
-            if only_functional:
-                where_conditions["url_functional"] = "true"
-            
-            # Выполняем поиск
-            search_params = {
-                'query_texts': [query],
-                'n_results': limit
-            }
-            
-            # Добавляем фильтры если есть
-            if where_conditions:
-                search_params['where'] = where_conditions
-            
-            results = self.collection.query(**search_params)
-            
-            products = []
-            if results['documents'][0]:
-                for i in range(len(results['documents'][0])):
-                    product = {
-                        'id': results['ids'][0][i],
-                        'name': results['metadatas'][0][i]['name'],
-                        'price': results['metadatas'][0][i]['price'],
-                        'category': results['metadatas'][0][i]['category'],
-                        'flowers': results['metadatas'][0][i]['flowers'],
-                        'url': results['metadatas'][0][i]['url'],
-                        'score': 1 - results['distances'][0][i],  # Релевантность
-                        'is_verified': results['metadatas'][0][i].get('is_verified', 'false'),
-                        'url_functional': results['metadatas'][0][i].get('url_functional', 'false')
-                    }
-                    products.append(product)
-            
-            return products
-        
-        except Exception as e:
-            print(f"❌ Ошибка поиска: {e}")
-            # Fallback поиск без фильтров
-            try:
-                results = self.collection.query(
-                    query_texts=[query],
-                    n_results=limit
-                )
-                
-                products = []
-                if results['documents'][0]:
-                    for i in range(len(results['documents'][0])):
-                        product = {
-                            'id': results['ids'][0][i],
-                            'name': results['metadatas'][0][i]['name'],
-                            'price': results['metadatas'][0][i]['price'],
-                            'category': results['metadatas'][0][i]['category'],
-                            'flowers': results['metadatas'][0][i]['flowers'],
-                            'url': results['metadatas'][0][i]['url'],
-                            'score': 1 - results['distances'][0][i]
-                        }
-                        products.append(product)
-                
-                return products
-            except:
-                return []
-    
-    def get_categories(self):
-        """Получить все категории"""
-        try:
-            all_results = self.collection.get()
-            categories = set()
-            
-            for metadata in all_results['metadatas']:
-                categories.add(metadata['category'])
-            
-            return sorted(list(categories))
-        except:
-            return []
+        print(f"✅ Загружено {len(products)} ЦВЕТОЧНЫХ продуктов в ChromaDB!")
     
     def get_stats(self):
-        """Получить статистику базы данных"""
+        """Получаем статистику только цветочных продуктов"""
         try:
-            all_results = self.collection.get()
-            total_products = len(all_results['ids'])
+            all_results = self.collection.get(
+                where={"is_flower_product": "True"}
+            )
+            
+            total_count = len(all_results['ids']) if all_results['ids'] else 0
             
             verified_count = 0
-            functional_urls = 0
+            functional_count = 0
             categories = set()
+            price_ranges = {"budget": 0, "medium": 0, "premium": 0}
             
-            for metadata in all_results['metadatas']:
-                if metadata.get('is_verified') == 'true':
-                    verified_count += 1
-                if metadata.get('url_functional') == 'true':
-                    functional_urls += 1
-                categories.add(metadata['category'])
+            if all_results['metadatas']:
+                for metadata in all_results['metadatas']:
+                    if metadata.get('is_verified') == 'True':
+                        verified_count += 1
+                    if metadata.get('url_functional') == 'True':
+                        functional_count += 1
+                    if metadata.get('category'):
+                        categories.add(metadata['category'])
+                    
+                    # Анализ цен
+                    price = metadata.get('price', 0)
+                    if price < 500:
+                        price_ranges["budget"] += 1
+                    elif price < 1500:
+                        price_ranges["medium"] += 1
+                    else:
+                        price_ranges["premium"] += 1
             
             return {
-                'total_products': total_products,
-                'verified_products': verified_count,
-                'functional_urls': functional_urls,
-                'categories_count': len(categories),
-                'categories': sorted(list(categories))
+                'total_flowers': total_count,
+                'verified_flowers': verified_count,
+                'functional_urls': functional_count,
+                'flower_categories': sorted(list(categories)),
+                'price_distribution': price_ranges
             }
+            
         except Exception as e:
+            print(f"❌ Ошибка получения статистики: {e}")
             return {'error': str(e)}
+    
+    def get_flower_categories(self):
+        """Получаем список только цветочных категорий"""
+        return sorted(list(self.flower_categories))
 
-# Создаем глобальный объект поиска
-vector_search = SimpleVectorSearch()
+# Создаем глобальный экземпляр ГОТОВОГО поиска
+vector_search = ProductionVectorSearch()
+
+# Удобные функции для использования
+def search_flowers(query, limit=5):
+    """Поиск цветов (основная функция)"""
+    return vector_search.search_flowers(query, limit)
+
+def search_verified_flowers(query, limit=5):
+    """Поиск только верифицированных цветов"""
+    return vector_search.search_flowers(query, limit, verified_only=True)
+
+def search_flowers_in_budget(query, max_price, limit=5):
+    """Поиск цветов в бюджете"""
+    return vector_search.search_in_budget(query, max_price, limit)
+
+def get_popular_flowers(limit=10):
+    """Популярные цветы"""
+    return vector_search.get_popular_flowers(limit)

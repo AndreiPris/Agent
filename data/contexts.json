@@ -1,183 +1,66 @@
 {
   "test_user": [
     {
-      "user_message": "show me popular products",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\n\n🌺 **1. The magnificence of roses**\n💰 4600 MDL\n📝 Basket with flowers \"The magnificence of roses\" - Magnificent basket showcasing the beauty of roses with eucalyptus\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Sweet Love**\n💰 830 MDL\n📝 Bouquet \"Sweet Love\" - Delightful bouquet with Pink Floyd and Mandala roses in shades of chic pink. With long stems and delicate aroma, perfect as a gift to a loved one. Photo shows bouquet of 31 pieces\n✨ *Frumos și elegant!*\n            \n\n🌺 *Sfat personal:* Dacă nu sunteți sigur, sunați-ne și vă vom ajuta să alegeți perfect!\n",
+      "user_message": "Vreau trandafiri verificați pentru soția mea",
+      "bot_response": "\n🌸 Înțeleg ce căutați, dar să verific mai bine opțiunile disponibile pentru dumneavoastră.\n\nVă rugăm să îmi spuneți mai multe despre:\n• Ocazia specială\n• Preferințele de culoare\n• Bugetul aproximativ\n\n📞 **Telefon:** +373 22 123 456\n📧 **Email:** hello@xoflowers.md\n\n💫 *Sunt aici să vă ajut să găsiți florile perfecte!*\n                ",
       "intent": "find_product",
-      "timestamp": "2025-07-15T00:50:41.946618",
+      "timestamp": "2025-07-16T15:59:51.626935",
       "user_id": "test_user",
-      "confidence": 0.9,
+      "confidence": 0.6000000000000001,
       "metadata": {}
     },
     {
-      "user_message": "I want roses",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\n\n🌺 **1. Box with french roses**\n💰 2250 MDL\n📝 Box with french roses - Elegant French roses with eucalyptus in premium presentation box\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Roses Mandala**\n💰 950 MDL\n📝 Bouquet \"Roses Mandala\" - Special bouquet featuring the exquisite Roses Mandala variety\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. Bouquet Roses Playa Blanca**\n💰 900 MDL\n📝 Bouquet Roses Playa Blanca - Pure white Playa Blanca roses available in 11, 21, 51 roses\n✨ *Frumos și elegant!*\n            \n\n🌺 **4. Bouquet Red Roses**\n💰 640 MDL\n📝 Bouquet Red Roses - Classic red rose bouquet for timeless elegance\n✨ *Frumos și elegant!*\n            \n\n🌺 **5. A box with french roses**\n💰 1050 MDL\n📝 A box with french roses - French roses with eucalyptus in elegant box - available in S, M, L sizes\n✨ *Frumos și elegant!*\n            \n\n🌺 *Sfat personal:* Dacă nu sunteți sigur, sunați-ne și vă vom ajuta să alegeți perfect!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
+      "user_message": "Caut buchete cu URL-uri funcționale",
+      "bot_response": "\n🌸 Înțeleg ce căutați, dar să verific mai bine opțiunile disponibile pentru dumneavoastră.\n\nVă rugăm să îmi spuneți mai multe despre:\n• Ocazia specială\n• Preferințele de culoare\n• Bugetul aproximativ\n\n📞 **Telefon:** +373 22 123 456\n📧 **Email:** hello@xoflowers.md\n\n💫 *Sunt aici să vă ajut să găsiți florile perfecte!*\n                ",
       "intent": "find_product",
-      "timestamp": "2025-07-15T00:50:43.153540",
+      "timestamp": "2025-07-16T16:00:03.615993",
       "user_id": "test_user",
-      "confidence": 0.9,
+      "confidence": 0.6000000000000001,
       "metadata": {}
     },
     {
-      "user_message": "I want fertilizer",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\nIată câteva sugestii frumoase din colecția noastră care s-ar putea să vă placă:\n\n\n🌺 **1. Luxurious**\n💰 8800 MDL\n📝 Bouquet \"Luxurious\" - An opulent bouquet featuring hydrangea, rose, and tanacetum.\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Poma Rosa**\n💰 8700 MDL\n📝 Basket with roses \"Poma Rosa\" - Luxurious basket filled with beautiful roses.\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. She's the only one!**\n💰 8300 MDL\n📝 Box with hydrangea \"She's the only one!\" - A special box dedicated to 'the only one', filled with hydrangea.\n✨ *Frumos și elegant!*\n            \n\n💫 *Doriți să caut ceva specific sau să vă recomand pe baza preferințelor dumneavoastră?*\n                ",
+      "user_message": "Flori pentru mama, doar produse existente",
+      "bot_response": "\n🌸 Înțeleg ce căutați, dar să verific mai bine opțiunile disponibile pentru dumneavoastră.\n\nVă rugăm să îmi spuneți mai multe despre:\n• Ocazia specială\n• Preferințele de culoare\n• Bugetul aproximativ\n\n📞 **Telefon:** +373 22 123 456\n📧 **Email:** hello@xoflowers.md\n\n💫 *Sunt aici să vă ajut să găsiți florile perfecte!*\n                ",
       "intent": "find_product",
-      "timestamp": "2025-07-15T00:50:44.080363",
+      "timestamp": "2025-07-16T16:00:15.675920",
       "user_id": "test_user",
-      "confidence": 0.7,
+      "confidence": 0.6000000000000001,
       "metadata": {}
     },
     {
-      "user_message": "anniversary flowers for mom",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\n\n🌺 **1. Bride's Bouquet of dried flowers**\n💰 3200 MDL\n📝 Bride's Bouquet of dried flowers - Bohemian bridal bouquet crafted from dried flowers and peony.\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Box with beautiful flowers**\n💰 2500 MDL\n📝 Box with beautiful flowers - Elegant box arrangement with hydrangea, peony and orchid Vanda\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. For a lady**\n💰 750 MDL\n📝 Bouquet \"For a lady\" - Elegant bouquet featuring Roses Pink Mondial\n✨ *Frumos și elegant!*\n            \n\n🌺 **4. Elegant bouquet of flowers**\n💰 1100 MDL\n📝 Elegant bouquet of flowers - Sophisticated arrangement with roses and matiola\n✨ *Frumos și elegant!*\n            \n\n🌺 **5. The romance of flowers**\n💰 1900 MDL\n📝 Box with flowers \"The romance of flowers\" - Romantic box with roses, spray roses, delphinium, ruscus and lisianthus - available in S, M, L sizes\n✨ *Frumos și elegant!*\n            \n\n🌺 *Sfat personal:* Dacă nu sunteți sigur, sunați-ne și vă vom ajuta să alegeți perfect!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
+      "user_message": "Vreau trandafiri verificați pentru soția mea",
+      "bot_response": "\n🌸 Înțeleg ce căutați, dar să verific mai bine opțiunile disponibile pentru dumneavoastră.\n\nVă rugăm să îmi spuneți mai multe despre:\n• Ocazia specială\n• Preferințele de culoare\n• Bugetul aproximativ\n\n📞 **Telefon:** +373 22 123 456\n📧 **Email:** hello@xoflowers.md\n\n💫 *Sunt aici să vă ajut să găsiți florile perfecte!*\n                ",
       "intent": "find_product",
-      "timestamp": "2025-07-15T00:51:16.848106",
+      "timestamp": "2025-07-16T16:06:34.401485",
       "user_id": "test_user",
-      "confidence": 0.9,
+      "confidence": 0.7800000000000001,
       "metadata": {}
     },
     {
-      "user_message": "Vreau un buchet de trandafiri",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\n\n🌺 **1. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. Luxurious Love**\n💰 2800 MDL\n📝 Bouquet \"Luxurious Love\" - Premium mixed bouquet with hydrangea, peonies, spray roses and gerberas\n✨ *Frumos și elegant!*\n            \n\n🌺 **4. Pink palette**\n💰 2000 MDL\n📝 Bouquet \"Pink palette\" - Romantic pink bouquet with peonies, spray roses and classic roses\n✨ *Frumos și elegant!*\n            \n\n🌺 **5. Silk evening**\n💰 1250 MDL\n📝 Bouquet \"Silk evening\" - Elegant evening bouquet with roses, tulips, chrysanthemum, allium and ruskus\n✨ *Frumos și elegant!*\n            \n\n🌺 *Sfat personal:* Dacă nu sunteți sigur, sunați-ne și vă vom ajuta să alegeți perfect!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
+      "user_message": "Vreau trandafiri verificați pentru soția mea",
+      "bot_response": "\n🌸 Înțeleg ce căutați, dar să verific mai bine opțiunile disponibile pentru dumneavoastră.\n\nVă rugăm să îmi spuneți mai multe despre:\n• Ocazia specială\n• Preferințele de culoare\n• Bugetul aproximativ\n\n📞 **Telefon:** +373 22 123 456\n📧 **Email:** hello@xoflowers.md\n\n💫 *Sunt aici să vă ajut să găsiți florile perfecte!*\n                ",
       "intent": "find_product",
-      "timestamp": "2025-07-15T01:58:34.336718",
+      "timestamp": "2025-07-16T16:08:35.316497",
       "user_id": "test_user",
-      "confidence": 1.0,
+      "confidence": 0.7800000000000001,
       "metadata": {}
     },
     {
-      "user_message": "Ce program aveți?",
-      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
-      "intent": "ask_question",
-      "timestamp": "2025-07-15T01:58:34.341858",
-      "user_id": "test_user",
-      "confidence": 0.42,
-      "metadata": {}
-    },
-    {
-      "user_message": "Bună ziua!",
-      "bot_response": "\n🌸 **Bună ziua, prietene fidel al XOFlowers!**\n\n*Vă mulțumim pentru loialitatea acordată! Sunteți parte din familia noastră de iubitori ai florilor.*\n\n🌺 **Ce planuri frumoase avem astăzi?**\n💐 Explorăm noile sosiri din colecție?\n🎁 Pregătim o surpriză specială pentru cineva drag?\n📞 Discutăm despre abonamentul dumneavoastră?\n\n✨ *Întotdeauna ne bucurăm să vă servim cu cele mai frumoase flori!*\n    ",
-      "intent": "greeting",
-      "timestamp": "2025-07-15T01:58:34.346949",
-      "user_id": "test_user",
-      "confidence": 0.4,
-      "metadata": {}
-    },
-    {
-      "user_message": "Vreau să plătesc",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\nIată câteva sugestii frumoase din colecția noastră care s-ar putea să vă placă:\n\n\n🌺 **1. Luxurious**\n💰 8800 MDL\n📝 Bouquet \"Luxurious\" - An opulent bouquet featuring hydrangea, rose, and tanacetum.\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Poma Rosa**\n💰 8700 MDL\n📝 Basket with roses \"Poma Rosa\" - Luxurious basket filled with beautiful roses.\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. She's the only one!**\n💰 8300 MDL\n📝 Box with hydrangea \"She's the only one!\" - A special box dedicated to 'the only one', filled with hydrangea.\n✨ *Frumos și elegant!*\n            \n\n💫 *Doriți să caut ceva specific sau să vă recomand pe baza preferințelor dumneavoastră?*\n                ",
+      "user_message": "Caut buchete cu URL-uri funcționale",
+      "bot_response": "\n🌸 Înțeleg ce căutați, dar să verific mai bine opțiunile disponibile pentru dumneavoastră.\n\nVă rugăm să îmi spuneți mai multe despre:\n• Ocazia specială\n• Preferințele de culoare\n• Bugetul aproximativ\n\n📞 **Telefon:** +373 22 123 456\n📧 **Email:** hello@xoflowers.md\n\n💫 *Sunt aici să vă ajut să găsiți florile perfecte!*\n                ",
       "intent": "find_product",
-      "timestamp": "2025-07-15T01:58:34.356778",
+      "timestamp": "2025-07-16T16:08:47.376670",
       "user_id": "test_user",
-      "confidence": 0.4,
+      "confidence": 0.7800000000000001,
       "metadata": {}
     },
     {
-      "user_message": "Vreau un buchet de trandafiri pentru mama",
-      "bot_response": "\n🌸 Pentru cea mai dragă mamă! Iată florile perfecte pentru a-i arăta cât de mult o iubești:\n\n\n🌸 **1. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **2. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **3. Luxurious Love**\n💰 2800 MDL\n📝 Bouquet \"Luxurious Love\" - Premium mixed bouquet with hydrangea, peonies, spray roses and gerberas\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **4. Pink palette**\n💰 2000 MDL\n📝 Bouquet \"Pink palette\" - Romantic pink bouquet with peonies, spray roses and classic roses\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **5. Silk evening**\n💰 1250 MDL\n📝 Bouquet \"Silk evening\" - Elegant evening bouquet with roses, tulips, chrysanthemum, allium and ruskus\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 *Sfat personal:* Pentru mamă, florile cu parfum delicat și culorile calde sunt mereu apreciate!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
+      "user_message": "Flori pentru mama, doar produse existente",
+      "bot_response": "\n🌸 Înțeleg ce căutați, dar să verific mai bine opțiunile disponibile pentru dumneavoastră.\n\nVă rugăm să îmi spuneți mai multe despre:\n• Ocazia specială\n• Preferințele de culoare\n• Bugetul aproximativ\n\n📞 **Telefon:** +373 22 123 456\n📧 **Email:** hello@xoflowers.md\n\n💫 *Sunt aici să vă ajut să găsiți florile perfecte!*\n                ",
       "intent": "find_product",
-      "timestamp": "2025-07-15T01:58:34.408090",
+      "timestamp": "2025-07-16T16:08:59.571534",
       "user_id": "test_user",
-      "confidence": 1.0,
-      "metadata": {}
-    },
-    {
-      "user_message": "Bună ziua!",
-      "bot_response": "\n🌸 **Bună ziua, prietene fidel al XOFlowers!**\n\n*Vă mulțumim pentru loialitatea acordată! Sunteți parte din familia noastră de iubitori ai florilor.*\n\n🌺 **Ce planuri frumoase avem astăzi?**\n💐 Explorăm noile sosiri din colecție?\n🎁 Pregătim o surpriză specială pentru cineva drag?\n📞 Discutăm despre abonamentul dumneavoastră?\n\n✨ *Întotdeauna ne bucurăm să vă servim cu cele mai frumoase flori!*\n    ",
-      "intent": "greeting",
-      "timestamp": "2025-07-15T01:58:34.415185",
-      "user_id": "test_user",
-      "confidence": 0.4,
-      "metadata": {}
-    },
-    {
-      "user_message": "Ce program aveți?",
-      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
-      "intent": "ask_question",
-      "timestamp": "2025-07-15T01:58:34.422014",
-      "user_id": "test_user",
-      "confidence": 0.42,
-      "metadata": {}
-    },
-    {
-      "user_message": "Vreau un buchet de trandafiri",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\n\n🌺 **1. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. Luxurious Love**\n💰 2800 MDL\n📝 Bouquet \"Luxurious Love\" - Premium mixed bouquet with hydrangea, peonies, spray roses and gerberas\n✨ *Frumos și elegant!*\n            \n\n🌺 **4. Pink palette**\n💰 2000 MDL\n📝 Bouquet \"Pink palette\" - Romantic pink bouquet with peonies, spray roses and classic roses\n✨ *Frumos și elegant!*\n            \n\n🌺 **5. Silk evening**\n💰 1250 MDL\n📝 Bouquet \"Silk evening\" - Elegant evening bouquet with roses, tulips, chrysanthemum, allium and ruskus\n✨ *Frumos și elegant!*\n            \n\n🌺 *Sfat personal:* Dacă nu sunteți sigur, sunați-ne și vă vom ajuta să alegeți perfect!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
-      "intent": "find_product",
-      "timestamp": "2025-07-15T01:59:45.792358",
-      "user_id": "test_user",
-      "confidence": 1.0,
-      "metadata": {}
-    },
-    {
-      "user_message": "Ce program aveți?",
-      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
-      "intent": "ask_question",
-      "timestamp": "2025-07-15T01:59:45.797906",
-      "user_id": "test_user",
-      "confidence": 0.42,
-      "metadata": {}
-    },
-    {
-      "user_message": "Bună ziua!",
-      "bot_response": "\n🌸 **Bună ziua, prietene fidel al XOFlowers!**\n\n*Vă mulțumim pentru loialitatea acordată! Sunteți parte din familia noastră de iubitori ai florilor.*\n\n🌺 **Ce planuri frumoase avem astăzi?**\n💐 Explorăm noile sosiri din colecție?\n🎁 Pregătim o surpriză specială pentru cineva drag?\n📞 Discutăm despre abonamentul dumneavoastră?\n\n✨ *Întotdeauna ne bucurăm să vă servim cu cele mai frumoase flori!*\n    ",
-      "intent": "greeting",
-      "timestamp": "2025-07-15T01:59:45.801266",
-      "user_id": "test_user",
-      "confidence": 0.4,
-      "metadata": {}
-    },
-    {
-      "user_message": "Vreau să plătesc",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\nIată câteva sugestii frumoase din colecția noastră care s-ar putea să vă placă:\n\n\n🌺 **1. Luxurious**\n💰 8800 MDL\n📝 Bouquet \"Luxurious\" - An opulent bouquet featuring hydrangea, rose, and tanacetum.\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Poma Rosa**\n💰 8700 MDL\n📝 Basket with roses \"Poma Rosa\" - Luxurious basket filled with beautiful roses.\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. She's the only one!**\n💰 8300 MDL\n📝 Box with hydrangea \"She's the only one!\" - A special box dedicated to 'the only one', filled with hydrangea.\n✨ *Frumos și elegant!*\n            \n\n💫 *Doriți să caut ceva specific sau să vă recomand pe baza preferințelor dumneavoastră?*\n                ",
-      "intent": "find_product",
-      "timestamp": "2025-07-15T01:59:45.809307",
-      "user_id": "test_user",
-      "confidence": 0.4,
-      "metadata": {}
-    },
-    {
-      "user_message": "Vreau un buchet de trandafiri pentru mama mea",
-      "bot_response": "\n🌸 Pentru cea mai dragă mamă! Iată florile perfecte pentru a-i arăta cât de mult o iubești:\n\n\n🌸 **1. The lilac meadow**\n💰 1650 MDL\n📝 Box with flowers \"The lilac meadow\" - Lilac-themed meadow box with gerbera, roses, matiola and tulips\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **2. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **3. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **4. A smile**\n💰 1350 MDL\n📝 Flower bouquet \"A smile\" - A lovely flower bouquet meant to bring a smile, with hydrangea and roses.\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 **5. Luxurious Love**\n💰 2800 MDL\n📝 Bouquet \"Luxurious Love\" - Premium mixed bouquet with hydrangea, peonies, spray roses and gerberas\n✨ *Perfecte pentru mama dragă!*\n            \n\n🌸 *Sfat personal:* Pentru mamă, florile cu parfum delicat și culorile calde sunt mereu apreciate!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
-      "intent": "find_product",
-      "timestamp": "2025-07-15T01:59:45.817069",
-      "user_id": "test_user",
-      "confidence": 1.0,
-      "metadata": {}
-    },
-    {
-      "user_message": "Ce program aveți?",
-      "bot_response": "\n🕒 **Programul XOFlowers:**\n\n🌅 **Luni - Vineri:** 9:00 - 20:00\n🌸 **Sâmbătă:** 10:00 - 18:00  \n🌺 **Duminică:** 11:00 - 17:00\n\n💫 *Suntem aici pentru dumneavoastră în fiecare zi, gata să vă ajutăm să găsiți florile perfecte pentru orice moment special!*\n\n📞 Pentru urgențe sau comenzi speciale, ne puteți contacta oricând!\n    ",
-      "intent": "ask_question",
-      "timestamp": "2025-07-15T01:59:45.820797",
-      "user_id": "test_user",
-      "confidence": 0.42,
-      "metadata": {}
-    },
-    {
-      "user_message": "Bună ziua!",
-      "bot_response": "\n🌸 **Bună ziua, prietene fidel al XOFlowers!**\n\n*Vă mulțumim pentru loialitatea acordată! Sunteți parte din familia noastră de iubitori ai florilor.*\n\n🌺 **Ce planuri frumoase avem astăzi?**\n💐 Explorăm noile sosiri din colecție?\n🎁 Pregătim o surpriză specială pentru cineva drag?\n📞 Discutăm despre abonamentul dumneavoastră?\n\n✨ *Întotdeauna ne bucurăm să vă servim cu cele mai frumoase flori!*\n    ",
-      "intent": "greeting",
-      "timestamp": "2025-07-15T01:59:45.823991",
-      "user_id": "test_user",
-      "confidence": 0.4,
-      "metadata": {}
-    },
-    {
-      "user_message": "Vreau să plătesc pentru buchet",
-      "bot_response": "\n🌸 Am găsit câteva opțiuni frumoase pentru dumneavoastră:\n\n\n🌺 **1. Kylie**\n💰 4000 MDL\n📝 Buchet \"Kylie\" - Magnificent bouquet created from luxury roses of famous varieties Pink Expression, Pink Floyd, Julliet, Silva Pink - a color palette that delights the eye with the delicate freshness of its shades\n✨ *Frumos și elegant!*\n            \n\n🌺 **2. Scarlet Inspiration**\n💰 2100 MDL\n📝 Buchet \"Scarlet Inspiration\" - A vibrant 'Scarlet Inspiration' bouquet with long-stemmed roses (70cm), available in various quantities.\n✨ *Frumos și elegant!*\n            \n\n🌺 **3. Marshmallow**\n💰 1200 MDL\n📝 Bouquet \"Marshmallow\" - Elegant bouquet of peonies in soft pastel colors, perfect for romantic occasions and special celebrations\n✨ *Frumos și elegant!*\n            \n\n🌺 **4. 51 peonies**\n💰 5600 MDL\n📝 Bouquet \"51 peonies\" - Luxurious bouquet of 51 fresh peonies for grand gestures and special occasions\n✨ *Frumos și elegant!*\n            \n\n🌺 **5. Coral**\n💰 650 MDL\n📝 Bouquet \"Coral\" - Beautiful coral-colored peony bouquet with viburnum accents\n✨ *Frumos și elegant!*\n            \n\n🌺 *Sfat personal:* Dacă nu sunteți sigur, sunați-ne și vă vom ajuta să alegeți perfect!\n\n📞 *Avem 5 opțiuni disponibile - sunați pentru a discuta toate variantele!*\n",
-      "intent": "find_product",
-      "timestamp": "2025-07-15T01:59:45.831428",
-      "user_id": "test_user",
-      "confidence": 1.0,
-      "metadata": {}
-    },
-    {
-      "user_message": "Mulțumesc, la revedere!",
-      "bot_response": "\n🌸 **Vă mulțumim că ați ales XOFlowers!**\n\n*Sperăm că v-am fost de ajutor și că veți fi mulțumit de serviciile noastre!*\n\n🌺 **Rămâneți în legătură:**\n📞 Pentru comenzi: +373 22 123 456\n📧 Email: hello@xoflowers.md\n🌐 Website: www.xoflowers.md\n\n💐 **Să aveți o zi frumoasă plină de flori!**\n✨ *Așteptăm să vă servim din nou cu plăcere!*\n        ",
-      "intent": "farewell",
-      "timestamp": "2025-07-15T01:59:45.834872",
-      "user_id": "test_user",
-      "confidence": 0.4,
+      "confidence": 0.7800000000000001,
       "metadata": {}
     }
   ],
